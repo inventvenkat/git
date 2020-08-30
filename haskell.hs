@@ -120,7 +120,7 @@ add2 :: (Num a) => a -> a
 add2 = (+) 2
 
 applyTwice :: (a -> a) -> a -> a
-applyTwice f x = f (f x)
+applyTwice f x = x * x
 
 flipT f a b = f b a
 -- multTwoWith4 7 (multTwoWith4 7 5)
