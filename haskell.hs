@@ -1,3 +1,14 @@
+module HaskellKarpagam where
+
+import qualified Data.List as D
+
+sort :: [Int] -> [Int]
+sort a = a
+
+sorthere :: [Int] -> [Int]
+sorthere = D.sort
+
+doubleMe :: Num a => a -> a
 doubleMe x = x + x
 doubleUs x y = doubleMe x + doubleMe y
 
@@ -120,7 +131,22 @@ add2 :: (Num a) => a -> a
 add2 = (+) 2
 
 applyTwice :: (a -> a) -> a -> a
-applyTwice f x = f x
+f `applyTwice` x = f x
+-- applyTwice f x = f x
 
 flipT f a b = f b a
 -- multTwoWith4 7 (multTwoWith4 7 5)
+
+returnIfGreaterThan5 :: Int -> Maybe Int
+returnIfGreaterThan5 a = if a > 5 then Just a else Nothing
+
+data Shape = Circle Float Float Float  | Rectangle Float Float Float Float deriving (Show, Eq)
+data Vector a = Vector a a a a deriving (Eq, Show)
+
+data Tree a = Empty | Node a (Tree a) (Tree a)
+data TrafficLight = Red | Yellow | Green deriving (Eq)
+
+instance Show TrafficLight where
+    show Red = "Red light"
+    show Yellow = "Yellow light"
+    show Green = "Green light"
